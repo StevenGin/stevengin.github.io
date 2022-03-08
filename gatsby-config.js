@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Steven Gin`,
     description: `A custom Gatsby starter template to start a blog or personal website.`,
-    siteUrl: `stevengin.com`,
+    siteUrl: `http://www.stevengin.com`,
     
   },
   plugins: [
