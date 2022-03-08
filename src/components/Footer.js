@@ -19,18 +19,25 @@ export function Footer() {
   return (
     <Container>
       <ButtonLink
-        href="https://mobile.twitter.com/lewislbr"
+        href="https://www.linkedin.com/in/stevengin/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Twitter
+        LinkedIn
       </ButtonLink>
       <ButtonLink
-        href="https://github.com/lewislbr/lewis-gatsby-starter-blog"
+        href="https://github.com/StevenGin"
         target="_blank"
         rel="noopener noreferrer"
       >
         Github
+      </ButtonLink>
+      <ButtonLink
+        href="mailto:verdananew@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Email
       </ButtonLink>
     </Container>
   )

@@ -1,5 +1,5 @@
 ---
-title: "Whole every miles as tiled at seven"
+title: "TFT Comp Adaption using Trees"
 date: "2019-03-22"
 ---
 
