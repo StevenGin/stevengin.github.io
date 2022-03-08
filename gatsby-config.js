@@ -1,8 +1,10 @@
 module.exports = {
+    pathPrefix: "/gh-pages",
   siteMetadata: {
     title: `Steven Gin`,
     description: `A custom Gatsby starter template to start a blog or personal website.`,
-    siteUrl: `https://lewis-gatsby-starter-blog.netlify.com`,
+    siteUrl: `stevengin.com`,
+    
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
