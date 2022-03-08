@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-097af854a696e7207562.js"
+    "url": "webpack-runtime-d7ffe393feec5af8c628.js"
   },
   {
     "url": "framework-ffbe7db38cb78ec94d7b.js"
   },
   {
-    "url": "app-9d1c8f94aced6b8b44f7.js"
+    "url": "app-59f8892edfd806e539d9.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "279cd33aeb465734574b32e28caebe30"
+    "revision": "3bdd7530a37f87cb6d38ede92377c7ab"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-16703ee5599528db9f93.js"
@@ -48,7 +48,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "7b5ec4207d37f2c9e2bd2c4e6dd935e4"
+    "revision": "8f93509054498045cf0d0cedef697ea7"
   },
   {
     "url": "polyfill-79b23a2c0dd7adcbe04f.js"
@@ -138,12 +138,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/gh-pages`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/gh-pages/app-9d1c8f94aced6b8b44f7.js`))) {
+  if (!resources || !(await caches.match(`/app-59f8892edfd806e539d9.js`))) {
     return await fetch(event.request)
   }
 
@@ -156,7 +156,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/gh-pages/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })

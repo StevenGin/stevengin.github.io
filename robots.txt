@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: http://www.stevengin.com/gh-pages/sitemap/sitemap-index.xml
+Sitemap: http://www.stevengin.com/sitemap/sitemap-index.xml
 Host: www.stevengin.com
