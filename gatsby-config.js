@@ -2,7 +2,7 @@ module.exports = {
     pathPrefix: "",
   siteMetadata: {
     title: `Steven Gin`,
-    description: `A custom Gatsby starter template to start a blog or personal website.`,
+    description: `A blog about data, video games and learning.`,
     siteUrl: `http://www.stevengin.com`,
     
   },

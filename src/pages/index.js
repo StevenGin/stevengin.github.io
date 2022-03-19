@@ -1,6 +1,7 @@
 import React from "react"
 import {Link, graphql} from "gatsby"
 import styled from "styled-components"
+import Typewriter from "typewriter-effect"
 import {
   HeaderLogo,
   HeadingXL,
@@ -11,12 +12,13 @@ import {
   TextDate,
 } from "../components"
 import {BREAKPOINT} from "../utils/constants"
+import FeatureSection from "../components/featureSection"
 
 const Hero = styled.div`
   margin-bottom: 20vh;
 
   @media (max-width: ${BREAKPOINT}px) {
-    margin-bottom: 15vh;
+    margin-bottom: 0;
   }
 `
 const TextHome = styled.p`
@@ -48,17 +50,30 @@ export default function Home({data}) {
   return (
     <>
       <SEO title="Blog" />
+
       <HeaderLogo />
       <Layout>
         <Hero>
-          <TextHome>
-            Hi, I'm
-          </TextHome>
+          <TextHome>Hi, I'm</TextHome>
           <HeadingXL>Steven Gin</HeadingXL>
           <TextHome>
-            I'm a data scientist.
+            <Typewriter
+              options={{
+                strings: [
+                  "Data Scientist",
+                  "Forecasting Expert",
+                  "Machine Learning Engineer",
+                  "Indie Video Game Developer",
+              
+                ],
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 100,
+              }}
+            />
           </TextHome>
         </Hero>
+
         {data.allMarkdownRemark.edges.map(({node}) => (
           <Link to={node.fields.slug} key={node.id}>
             <Post>
