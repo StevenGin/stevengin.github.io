@@ -12,7 +12,6 @@ import {
   TextDate,
 } from "../components"
 import {BREAKPOINT} from "../utils/constants"
-import FeatureSection from "../components/featureSection"
 
 const Hero = styled.div`
   margin-bottom: 20vh;
