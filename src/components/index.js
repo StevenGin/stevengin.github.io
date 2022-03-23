@@ -12,3 +12,5 @@ export {Layout} from "./Layout"
 export {SEO} from "./SEO"
 export {TextBody} from "./TextBody"
 export {TextDate} from "./TextDate"
+export {SocialIcon} from "./SocialIcon"
+

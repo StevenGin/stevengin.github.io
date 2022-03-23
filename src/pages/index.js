@@ -10,8 +10,12 @@ import {
   SEO,
   TextBody,
   TextDate,
+  SocialIcon,
 } from "../components"
 import {BREAKPOINT} from "../utils/constants"
+import {SiGithub} from "@react-icons/all-files/si/SiGithub"
+import {SiLinkedin} from "@react-icons/all-files/si/SiLinkedin"
+// import { AiOutlineMail } from "@react-icons/all-files/ai/AiOutlineMail";
 
 const Hero = styled.div`
   margin-bottom: 20vh;
@@ -44,6 +48,20 @@ const Post = styled.div`
     padding-left: 0;
   }
 `
+const SocialIconList = styled.ul`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 8em;
+  padding: 1em 0;
+`
+const SocialIconContainer = styled.li`
+  width: 2em;
+  height: 2em;
+`
 
 export default function Home({data}) {
   return (
@@ -55,6 +73,7 @@ export default function Home({data}) {
         <Hero>
           <TextHome>Hi, I'm</TextHome>
           <HeadingXL>Steven Gin</HeadingXL>
+
           <TextHome>
             <Typewriter
               options={{
@@ -63,7 +82,6 @@ export default function Home({data}) {
                   "Forecasting Expert",
                   "Machine Learning Engineer",
                   "Indie Video Game Developer",
-              
                 ],
                 autoStart: true,
                 loop: true,
@@ -71,6 +89,22 @@ export default function Home({data}) {
               }}
             />
           </TextHome>
+          <SocialIconList>
+            <SocialIconContainer>
+              <SocialIcon>
+                <a href="https://github.com/StevenGin">
+                  <SiGithub />
+                </a>
+              </SocialIcon>
+            </SocialIconContainer>
+            <SocialIconContainer>
+              <SocialIcon>
+                <a href="https://www.linkedin.com/in/stevengin/">
+                  <SiLinkedin />
+                </a>
+              </SocialIcon>
+            </SocialIconContainer>
+          </SocialIconList>
         </Hero>
 
         {data.allMarkdownRemark.edges.map(({node}) => (

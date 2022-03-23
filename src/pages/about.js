@@ -39,6 +39,8 @@ const TextHome = styled.p`
     margin-bottom: 7vh;
   }
 `
+
+
 export default function About({data}) {
   return (
     <>
