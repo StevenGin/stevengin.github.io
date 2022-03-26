@@ -15,7 +15,8 @@ import {
 import {BREAKPOINT} from "../utils/constants"
 import {SiGithub} from "@react-icons/all-files/si/SiGithub"
 import {SiLinkedin} from "@react-icons/all-files/si/SiLinkedin"
-// import { AiOutlineMail } from "@react-icons/all-files/ai/AiOutlineMail";
+
+import {AiFillFilePdf} from "@react-icons/all-files/ai/AiFillFilePdf"
 
 const Hero = styled.div`
   margin-bottom: 20vh;
@@ -55,7 +56,7 @@ const SocialIconList = styled.ul`
   justify-content: space-around;
   list-style: none;
   margin: 0 auto;
-  max-width: 8em;
+  max-width: 12em;
   padding: 1em 0;
 `
 const SocialIconContainer = styled.li`
@@ -66,6 +67,12 @@ const SocialIconContainer = styled.li`
 export default function Home({data}) {
   return (
     <>
+      <svg width="0" height="0">
+        <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+          <stop stopColor="#d72828" offset="0%" />
+          <stop stopColor="#00d4ff" offset="100%" />
+        </linearGradient>
+      </svg>
       <SEO title="Blog" />
 
       <HeaderLogo />
@@ -101,6 +108,13 @@ export default function Home({data}) {
               <SocialIcon>
                 <a href="https://www.linkedin.com/in/stevengin/">
                   <SiLinkedin />
+                </a>
+              </SocialIcon>
+            </SocialIconContainer>
+            <SocialIconContainer>
+              <SocialIcon>
+                <a href="https://docs.google.com/document/d/18BU1a9Lfj6sCh8ZM-ybdlIn_Dd11zdrOkD6749sojw4/edit?usp=sharing">
+                  <AiFillFilePdf />
                 </a>
               </SocialIcon>
             </SocialIconContainer>
