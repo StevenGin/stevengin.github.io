@@ -85,9 +85,9 @@ export default function Home({data}) {
             <Typewriter
               options={{
                 strings: [
-                  "Data Scientist",
-                  "Forecasting Expert",
-                  "Machine Learning Engineer",
+                  "Senior Staff Data Scientist",
+                  "Causal Inference & Experimentation",
+                  "Forecasting at Meta Scale",
                   "Indie Video Game Developer",
                 ],
                 autoStart: true,
@@ -113,7 +113,7 @@ export default function Home({data}) {
             </SocialIconContainer>
             <SocialIconContainer>
               <SocialIcon>
-                <a href="https://docs.google.com/document/d/18BU1a9Lfj6sCh8ZM-ybdlIn_Dd11zdrOkD6749sojw4/edit?usp=sharing">
+                <a href="https://docs.google.com/document/d/1_yLuoghXUbaRGU_rYlaRGi3LiWtwkLzAsUNjsoJdvCQ/edit?usp=sharing">
                   <AiFillFilePdf />
                 </a>
               </SocialIcon>

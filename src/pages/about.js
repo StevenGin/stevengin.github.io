@@ -10,18 +10,8 @@ import {
   SEO,
   TextBody,
 } from "../components"
-import App from "../components/piechart"
 import {BREAKPOINT} from "../utils/constants"
 import styled from "styled-components"
-
-const Graph = styled.div`
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 50px;
-
-  @media (max-width: ${BREAKPOINT}px) {
-    padding-left: 0;
-  }
-`
 
 const TextHome = styled.p`
   color: var(--dark-color-light);
@@ -40,7 +30,6 @@ const TextHome = styled.p`
   }
 `
 
-
 export default function About({data}) {
   return (
     <>
@@ -50,20 +39,75 @@ export default function About({data}) {
         <HeadingXL>About</HeadingXL>
         <Image fluid={data.RandomPhoto.childImageSharp.fluid} />
         <TextBody>
-          Passionate about combining technical solutions with business problems.
+          I&apos;m a Senior Staff Data Scientist at Meta and the technical lead
+          across WhatsApp Analytics, a 300-person organization. I chair the
+          senior IC forum, lead AI for Analytics, and own WhatsApp-wide
+          experimentation, logging, dashboard, and agentic data-access
+          infrastructure. I regularly present to WhatsApp C-suite leadership.
+          <br />
+          <br />
+          My work is causal inference and experimentation applied to growth,
+          competition, and forecasting decisions at Meta scale — most recently
+          scaling WhatsApp experimentation from 11,000 tests a year to a
+          projected 25,000.
           <br />
           <br />
           In my spare time, I play guitar and make video games.
         </TextBody>
-        <HeadingL>Languages</HeadingL>
+
+        <HeadingL>Experience</HeadingL>
         <TextBody>
-          My relative language proficiencies. <br />
-          <b>Note</b>: Pie Charts are mostly bad but they look good.
+          <b>Senior Staff Data Scientist, WhatsApp Ecosystems, Meta</b>
+          <br />
+          2024 – Present
+          <br />
+          <br />
+          <b>Data Science Manager, Family Ecosystems, Meta</b>
+          <br />
+          2022 – 2024
+          <br />
+          <br />
+          <b>Staff Data Scientist, Facebook Ecosystems, Meta</b>
+          <br />
+          2019 – 2022
+          <br />
+          <br />
+          <b>Data Science Analyst, Dialpad</b>
+          <br />
+          2018 – 2019
+          <br />
+          <br />
+          <b>Logistics / Business Process Analyst, Best Buy</b>
+          <br />
+          2016 – 2018
         </TextBody>
 
-        <Graph>
-          <App />
-        </Graph>
+        <HeadingL>Publications</HeadingL>
+        <TextBody>
+          <a
+            href="https://medium.com/@AnalyticsAtMeta/forecasting-meta-balancing-art-and-science-92526e1ae36c"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Forecasting@Meta: Balancing Art and Science
+          </a>
+          , with Kevin Birnbaum, Analytics at Meta, May 2024.
+        </TextBody>
+
+        <HeadingL>Education</HeadingL>
+        <TextBody>
+          <b>M.A. Economics, University of Ottawa</b>
+          <br />
+          2014 – 2016
+          <br />
+          <br />
+          <b>
+            B.A. (Honours) Economics and Linguistics, University of Manitoba
+          </b>
+          <br />
+          2010 – 2014
+        </TextBody>
+
         <Button href="mailto:verdananew&#64;gmail.com">Get in touch</Button>
       </Layout>
     </>
