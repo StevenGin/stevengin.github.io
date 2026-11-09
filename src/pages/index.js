@@ -1,5 +1,4 @@
 import React from "react"
-import {Link, graphql} from "gatsby"
 import styled from "styled-components"
 import Typewriter from "typewriter-effect"
 import {
@@ -9,7 +8,6 @@ import {
   Layout,
   SEO,
   TextBody,
-  TextDate,
   SocialIcon,
 } from "../components"
 import {BREAKPOINT} from "../utils/constants"
@@ -41,7 +39,7 @@ const TextHome = styled.p`
     margin-bottom: 7vh;
   }
 `
-const Post = styled.div`
+const TimelineEntry = styled.div`
   border-bottom: 1px solid lightgray;
   margin-bottom: 50px;
 
@@ -64,7 +62,7 @@ const SocialIconContainer = styled.li`
   height: 2em;
 `
 
-export default function Home({data}) {
+export default function Home() {
   return (
     <>
       <svg width="0" height="0">
@@ -73,7 +71,7 @@ export default function Home({data}) {
           <stop stopColor="#00d4ff" offset="100%" />
         </linearGradient>
       </svg>
-      <SEO title="Blog" />
+      <SEO title="Home" />
 
       <HeaderLogo />
       <Layout>
@@ -121,36 +119,67 @@ export default function Home({data}) {
           </SocialIconList>
         </Hero>
 
-        {data.allMarkdownRemark.edges.map(({node}) => (
-          <Link to={node.fields.slug} key={node.id}>
-            <Post>
-              <HeadingL>{node.frontmatter.title}</HeadingL>
-              <TextBody>{node.excerpt}</TextBody>
-              <TextDate>{node.frontmatter.date}</TextDate>
-            </Post>
-          </Link>
-        ))}
+        <HeadingL>Career</HeadingL>
+
+        <TimelineEntry>
+          <TextBody>
+            <b>Senior Staff Data Scientist, WhatsApp Ecosystems, Meta</b>
+            <br />
+            2024 – Present
+            <br />
+            Technical lead across WhatsApp Analytics, a 300-person
+            organization. Owns WhatsApp-wide experimentation, logging,
+            dashboard, and agentic data-access infrastructure.
+          </TextBody>
+        </TimelineEntry>
+
+        <TimelineEntry>
+          <TextBody>
+            <b>Data Science Manager, Family Ecosystems, Meta</b>
+            <br />
+            2022 – 2024
+            <br />
+            Managed up to 11 data scientists. Head of cross-company
+            forecasting, building the framework and infrastructure used
+            throughout Meta.
+          </TextBody>
+        </TimelineEntry>
+
+        <TimelineEntry>
+          <TextBody>
+            <b>Staff Data Scientist, Facebook Ecosystems, Meta</b>
+            <br />
+            2019 – 2022
+            <br />
+            Led Facebook growth forecasting across 12k+ time series, and
+            delivered executive analyses on US Elections, Covid impact, and
+            Young Adults.
+          </TextBody>
+        </TimelineEntry>
+
+        <TimelineEntry>
+          <TextBody>
+            <b>Data Science Analyst, Dialpad</b>
+            <br />
+            2018 – 2019
+            <br />
+            Built the company&apos;s data warehouse and pipelines from
+            scratch, plus a fraud classifier and an ASR model for company
+            name pronunciation.
+          </TextBody>
+        </TimelineEntry>
+
+        <TimelineEntry>
+          <TextBody>
+            <b>Logistics / Business Process Analyst, Best Buy</b>
+            <br />
+            2016 – 2018
+            <br />
+            Warehouse routing and labor productivity models, driving a 30%
+            efficiency gain across the supply chain.
+          </TextBody>
+        </TimelineEntry>
       </Layout>
     </>
   )
 }
-
-export const data = graphql`
-  query {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
-      }
-    }
-  }
-`
