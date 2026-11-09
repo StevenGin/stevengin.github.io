@@ -8,9 +8,11 @@ Steven Gin's personal site — a Gatsby blog at [stevengin.com](https://stevengi
 
 ## Résumé link
 
-The PDF icon on the home page links to the Google Doc résumé
-("Steven Gin Resume — Updated Nov 2026"). That doc must stay shared as
-"Anyone with the link can view" or the link breaks for visitors.
+The PDF icon on the home page links to `static/steven-gin-resume.pdf`,
+served as `/steven-gin-resume.pdf`. It is an export of the Google Doc
+résumé ("Steven Gin Resume — Updated Nov 2026"). When the Doc changes,
+re-export it (Drive → Download as PDF) and replace that file — the link
+itself never changes.
 
 ## Develop
 

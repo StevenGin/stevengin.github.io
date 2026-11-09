@@ -113,7 +113,7 @@ export default function Home({data}) {
             </SocialIconContainer>
             <SocialIconContainer>
               <SocialIcon>
-                <a href="https://docs.google.com/document/d/1_yLuoghXUbaRGU_rYlaRGi3LiWtwkLzAsUNjsoJdvCQ/edit?usp=sharing">
+                <a href="/steven-gin-resume.pdf">
                   <AiFillFilePdf />
                 </a>
               </SocialIcon>
