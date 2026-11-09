@@ -164,6 +164,28 @@ const CounterNote = styled.p`
   font-size: 14px;
   margin: 0;
 `
+const RoleStats = styled.div`
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+`
+const RoleStat = styled.div`
+  border: 1px solid lightgray;
+  border-top: 3px solid var(--accent-color);
+  padding: 12px 16px;
+`
+const RoleStatValue = styled.p`
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 4px 0;
+`
+const RoleStatLabel = styled.p`
+  color: var(--dark-color-lighter);
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+`
 const SocialIconList = styled.ul`
   align-items: center;
   display: flex;
@@ -289,14 +311,6 @@ export default function Home() {
           </CounterCard>
         </SillyGrid>
 
-        <ChartTitle>
-          WhatsApp experimentation, tests per year
-        </ChartTitle>
-        <ChartCard>
-          <ExperimentChart />
-        </ChartCard>
-        <ChartCaption>*2026 projected.</ChartCaption>
-
         <HeadingL>Career</HeadingL>
 
         <Timeline>
@@ -321,6 +335,13 @@ export default function Home() {
                   semantic models, and an experimentation agent.
                 </ProjectItem>
               </ProjectList>
+              <ChartTitle>
+                WhatsApp experimentation, tests per year
+              </ChartTitle>
+              <ChartCard>
+                <ExperimentChart />
+              </ChartCard>
+              <ChartCaption>*2026 projected.</ChartCaption>
             </TextBody>
           </TimelineEntry>
 
@@ -341,6 +362,12 @@ export default function Home() {
                   data science, saving hundreds of hours of DS time.
                 </ProjectItem>
               </ProjectList>
+              <RoleStats>
+                <RoleStat>
+                  <RoleStatValue>11</RoleStatValue>
+                  <RoleStatLabel>data scientists managed</RoleStatLabel>
+                </RoleStat>
+              </RoleStats>
             </TextBody>
           </TimelineEntry>
 
@@ -366,6 +393,12 @@ export default function Home() {
                   and Young Adults, steering product strategy and policy.
                 </ProjectItem>
               </ProjectList>
+              <RoleStats>
+                <RoleStat>
+                  <RoleStatValue>12k+</RoleStatValue>
+                  <RoleStatLabel>time series forecast</RoleStatLabel>
+                </RoleStat>
+              </RoleStats>
             </TextBody>
           </TimelineEntry>
 
@@ -390,6 +423,12 @@ export default function Home() {
                   pronunciation.
                 </ProjectItem>
               </ProjectList>
+              <RoleStats>
+                <RoleStat>
+                  <RoleStatValue>3</RoleStatValue>
+                  <RoleStatLabel>core systems built</RoleStatLabel>
+                </RoleStat>
+              </RoleStats>
             </TextBody>
           </TimelineEntry>
 
@@ -409,6 +448,12 @@ export default function Home() {
                   the national logistics network.
                 </ProjectItem>
               </ProjectList>
+              <RoleStats>
+                <RoleStat>
+                  <RoleStatValue>30%</RoleStatValue>
+                  <RoleStatLabel>routing efficiency gain</RoleStatLabel>
+                </RoleStat>
+              </RoleStats>
             </TextBody>
           </TimelineEntry>
 
