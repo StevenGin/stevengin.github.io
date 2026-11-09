@@ -39,13 +39,51 @@ const TextHome = styled.p`
     margin-bottom: 7vh;
   }
 `
-const TimelineEntry = styled.div`
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 50px;
+const Timeline = styled.div`
+  border-left: 2px solid lightgray;
+  margin-left: 6px;
+  padding-left: 32px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding-left: 0;
+    padding-left: 24px;
   }
+`
+const TimelineEntry = styled.div`
+  margin-bottom: 50px;
+  position: relative;
+
+  &::before {
+    background-color: var(--accent-color);
+    border: 3px solid var(--light-color);
+    border-radius: 50%;
+    content: "";
+    height: 14px;
+    left: -43px;
+    position: absolute;
+    top: 4px;
+    width: 14px;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    &::before {
+      left: -35px;
+    }
+  }
+`
+const TimelineDate = styled.p`
+  color: var(--accent-color);
+  font-weight: 700;
+  margin: 0 0 8px 0;
+`
+const ProjectList = styled.ul`
+  && {
+    list-style: disc;
+  }
+  margin: 12px 0 0 0;
+  padding-left: 1.2em;
+`
+const ProjectItem = styled.li`
+  margin-bottom: 6px;
 `
 const SocialIconList = styled.ul`
   align-items: center;
@@ -121,64 +159,129 @@ export default function Home() {
 
         <HeadingL>Career</HeadingL>
 
-        <TimelineEntry>
-          <TextBody>
-            <b>Senior Staff Data Scientist, WhatsApp Ecosystems, Meta</b>
-            <br />
-            2024 – Present
-            <br />
-            Technical lead across WhatsApp Analytics, a 300-person
-            organization. Owns WhatsApp-wide experimentation, logging,
-            dashboard, and agentic data-access infrastructure.
-          </TextBody>
-        </TimelineEntry>
+        <Timeline>
+          <TimelineEntry>
+            <TextBody>
+              <b>Senior Staff Data Scientist, WhatsApp Ecosystems, Meta</b>
+              <TimelineDate>2024 – Present</TimelineDate>
+              Technical lead across WhatsApp Analytics, a 300-person
+              organization. Owns WhatsApp-wide experimentation, logging,
+              dashboard, and agentic data-access infrastructure.
+              <ProjectList>
+                <ProjectItem>
+                  <b>Experimentation at scale</b> — grew WhatsApp testing
+                  from 11,000 to a projected 25,000 tests a year.
+                </ProjectItem>
+                <ProjectItem>
+                  <b>Jurisdiction model</b> — ML predicts a user&apos;s
+                  country of residence, replacing phone-number logic.
+                </ProjectItem>
+                <ProjectItem>
+                  <b>AI for Analytics</b> — standardizing tooling, evals,
+                  semantic models, and an experimentation agent.
+                </ProjectItem>
+              </ProjectList>
+            </TextBody>
+          </TimelineEntry>
 
-        <TimelineEntry>
-          <TextBody>
-            <b>Data Science Manager, Family Ecosystems, Meta</b>
-            <br />
-            2022 – 2024
-            <br />
-            Managed up to 11 data scientists. Head of cross-company
-            forecasting, building the framework and infrastructure used
-            throughout Meta.
-          </TextBody>
-        </TimelineEntry>
+          <TimelineEntry>
+            <TextBody>
+              <b>Data Science Manager, Family Ecosystems, Meta</b>
+              <TimelineDate>2022 – 2024</TimelineDate>
+              Managed up to 11 data scientists. Head of cross-company
+              forecasting, building the framework and infrastructure used
+              throughout Meta.
+              <ProjectList>
+                <ProjectItem>
+                  <b>Cross-company forecasting</b> — the forecasting
+                  framework and infrastructure used throughout Meta.
+                </ProjectItem>
+                <ProjectItem>
+                  <b>Common Analytics</b> — standardized code reuse across
+                  data science, saving hundreds of hours of DS time.
+                </ProjectItem>
+              </ProjectList>
+            </TextBody>
+          </TimelineEntry>
 
-        <TimelineEntry>
-          <TextBody>
-            <b>Staff Data Scientist, Facebook Ecosystems, Meta</b>
-            <br />
-            2019 – 2022
-            <br />
-            Led Facebook growth forecasting across 12k+ time series, and
-            delivered executive analyses on US Elections, Covid impact, and
-            Young Adults.
-          </TextBody>
-        </TimelineEntry>
+          <TimelineEntry>
+            <TextBody>
+              <b>Staff Data Scientist, Facebook Ecosystems, Meta</b>
+              <TimelineDate>2019 – 2022</TimelineDate>
+              Led Facebook growth forecasting across 12k+ time series, and
+              delivered executive analyses on US Elections, Covid impact, and
+              Young Adults.
+              <ProjectList>
+                <ProjectItem>
+                  <b>Growth forecasting</b> — overhauled FB forecasting;
+                  12k+ time series, the largest forecasting infrastructure
+                  at Meta.
+                </ProjectItem>
+                <ProjectItem>
+                  <b>Uplift &amp; churn</b> — prediction model behind SMB ads
+                  and Facebook notifications.
+                </ProjectItem>
+                <ProjectItem>
+                  <b>Executive analyses</b> — US Elections, Covid impact,
+                  and Young Adults, steering product strategy and policy.
+                </ProjectItem>
+              </ProjectList>
+            </TextBody>
+          </TimelineEntry>
 
-        <TimelineEntry>
-          <TextBody>
-            <b>Data Science Analyst, Dialpad</b>
-            <br />
-            2018 – 2019
-            <br />
-            Built the company&apos;s data warehouse and pipelines from
-            scratch, plus a fraud classifier and an ASR model for company
-            name pronunciation.
-          </TextBody>
-        </TimelineEntry>
+          <TimelineEntry>
+            <TextBody>
+              <b>Data Science Analyst, Dialpad</b>
+              <TimelineDate>2018 – 2019</TimelineDate>
+              Built the company&apos;s data warehouse and pipelines from
+              scratch, plus a fraud classifier and an ASR model for company
+              name pronunciation.
+              <ProjectList>
+                <ProjectItem>
+                  <b>Data warehouse</b> — built from scratch, powering core
+                  business analytics.
+                </ProjectItem>
+                <ProjectItem>
+                  <b>Fraud classifier</b> — isolation forest, fully
+                  automating manual fraud review.
+                </ProjectItem>
+                <ProjectItem>
+                  <b>ASR model</b> — speech recognition for company name
+                  pronunciation.
+                </ProjectItem>
+              </ProjectList>
+            </TextBody>
+          </TimelineEntry>
 
-        <TimelineEntry>
-          <TextBody>
-            <b>Logistics / Business Process Analyst, Best Buy</b>
-            <br />
-            2016 – 2018
-            <br />
-            Warehouse routing and labor productivity models, driving a 30%
-            efficiency gain across the supply chain.
-          </TextBody>
-        </TimelineEntry>
+          <TimelineEntry>
+            <TextBody>
+              <b>Logistics / Business Process Analyst, Best Buy</b>
+              <TimelineDate>2016 – 2018</TimelineDate>
+              Warehouse routing and labor productivity models, driving a 30%
+              efficiency gain across the supply chain.
+              <ProjectList>
+                <ProjectItem>
+                  <b>Warehouse routing</b> — 30% efficiency gain across the
+                  supply chain.
+                </ProjectItem>
+                <ProjectItem>
+                  <b>Capacity models</b> — throughput and allocation across
+                  the national logistics network.
+                </ProjectItem>
+              </ProjectList>
+            </TextBody>
+          </TimelineEntry>
+
+          <TimelineEntry>
+            <TextBody>
+              <b>Side projects</b>
+              <TimelineDate>Ongoing</TimelineDate>
+              Indie games in Unity, in development — <b>Popstar</b>, a
+              pop-group management game, and <b>Aboard the Astra 2</b>, a
+              co-op roguelike.
+            </TextBody>
+          </TimelineEntry>
+        </Timeline>
       </Layout>
     </>
   )
