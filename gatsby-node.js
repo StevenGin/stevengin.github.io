@@ -20,7 +20,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       module: {
         rules: [
           {
-            test: /@nivo\/pie/,
+            test: /@nivo\/(pie|bar)/,
             use: loaders.null(),
           },
         ],

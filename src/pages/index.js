@@ -15,6 +15,7 @@ import {SiGithub} from "@react-icons/all-files/si/SiGithub"
 import {SiLinkedin} from "@react-icons/all-files/si/SiLinkedin"
 
 import {AiFillFilePdf} from "@react-icons/all-files/ai/AiFillFilePdf"
+import {ExperimentChart} from "../components/ExperimentChart"
 
 const Hero = styled.div`
   margin-bottom: 20vh;
@@ -84,6 +85,48 @@ const ProjectList = styled.ul`
 `
 const ProjectItem = styled.li`
   margin-bottom: 6px;
+`
+const KpiGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 5vh;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`
+const KpiCard = styled.div`
+  border: 1px solid lightgray;
+  border-top: 3px solid var(--accent-color);
+  padding: 20px 16px;
+`
+const KpiValue = styled.p`
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 8px 0;
+`
+const KpiLabel = styled.p`
+  color: var(--dark-color-lighter);
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+`
+const ChartCard = styled.div`
+  border: 1px solid lightgray;
+  margin-bottom: 12px;
+  padding: 20px 8px 8px;
+`
+const ChartTitle = styled.p`
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+`
+const ChartCaption = styled.p`
+  color: var(--dark-color-lighter);
+  font-size: 14px;
+  margin: 0 0 5vh 0;
 `
 const SocialIconList = styled.ul`
   align-items: center;
@@ -156,6 +199,41 @@ export default function Home() {
             </SocialIconContainer>
           </SocialIconList>
         </Hero>
+
+        <HeadingL>By the numbers</HeadingL>
+
+        <KpiGrid>
+          <KpiCard>
+            <KpiValue>25,000</KpiValue>
+            <KpiLabel>
+              tests per year at WhatsApp (2026, projected)
+            </KpiLabel>
+          </KpiCard>
+          <KpiCard>
+            <KpiValue>300</KpiValue>
+            <KpiLabel>people in WhatsApp Analytics</KpiLabel>
+          </KpiCard>
+          <KpiCard>
+            <KpiValue>12k+</KpiValue>
+            <KpiLabel>
+              time series in Meta&apos;s largest forecasting infrastructure
+            </KpiLabel>
+          </KpiCard>
+          <KpiCard>
+            <KpiValue>30%</KpiValue>
+            <KpiLabel>
+              warehouse routing efficiency gain, Best Buy
+            </KpiLabel>
+          </KpiCard>
+        </KpiGrid>
+
+        <ChartTitle>
+          WhatsApp experimentation, tests per year
+        </ChartTitle>
+        <ChartCard>
+          <ExperimentChart />
+        </ChartCard>
+        <ChartCaption>*2026 projected.</ChartCaption>
 
         <HeadingL>Career</HeadingL>
 
