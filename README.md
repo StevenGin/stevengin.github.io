@@ -1,91 +1,32 @@
-<h1 align="center">
-  Lewis Gatsby Starter Blog
-</h1>
+# stevengin.com
 
-<br>
-<br>
+Steven Gin's personal site — a Gatsby blog at [stevengin.com](https://stevengin.com).
 
-Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+- **Home** — intro, current role, links to GitHub / LinkedIn / résumé, and the blog index.
+- **About** (`src/pages/about.js`) — current role and career summary, kept in sync with the résumé.
+- **Blog** (`src/pages/blog/`) — one Markdown file per post. The March Madness / Kaggle post is the only one; the old deep-learning-generated placeholder posts were removed.
 
-Additionally, it has [ESLint](https://eslint.org/) to lint JavaScript and React, and [Prettier](https://prettier.io/) to format code according to a specified set of rules.
+## Résumé link
 
-<br>
-<br>
+The PDF icon on the home page links to the Google Doc résumé
+("Steven Gin Resume — Updated Nov 2026"). That doc must stay shared as
+"Anyone with the link can view" or the link breaks for visitors.
 
-## 🚀 Quick start
+## Develop
 
-1.  **Create a Gatsby site.**
+```sh
+npm install
+npm start        # http://localhost:8000
+```
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+## Deploy
 
-    ```sh
-    # create a new Gatsby site using the blog starter
-    gatsby new my-blog https://github.com/lewislbr/lewis-gatsby-starter-blog
-    ```
+The site is built and pushed to the `gh-pages` branch — merging to `main`
+alone does **not** update the live site:
 
-1.  **Start developing.**
+```sh
+npm run deploy   # gatsby build --prefix-paths && gh-pages -d public
+```
 
-    Navigate into your new site’s directory and start it up.
-
-    ```sh
-    cd my-blog/
-    gatsby develop
-    ```
-
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-blog` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-<br>
-<br>
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .eslintrc
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── LICENSE
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.eslintrc`**: A configuration file for [ESLint](https://eslint.org), a linting utility for JavaScript and React.
-
-4.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-5.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-9.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-10. **`README.md`**: A text file containing useful reference information about your project.
-
-<br>
-<br>
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+Note: this is Gatsby 2 / React 17 (last touched 2022, refreshed Nov 2026).
+A Gatsby upgrade is a separate job, not part of a content refresh.

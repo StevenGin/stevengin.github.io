@@ -2,8 +2,8 @@ module.exports = {
     pathPrefix: "",
   siteMetadata: {
     title: `Steven Gin`,
-    description: `A blog about data, video games and learning.`,
-    siteUrl: `http://www.stevengin.com`,
+    description: `Senior Staff Data Scientist at Meta (WhatsApp) — experimentation, causal inference, and forecasting. Plus video games.`,
+    siteUrl: `https://stevengin.com`,
     
   },
   plugins: [
