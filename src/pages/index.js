@@ -289,6 +289,14 @@ export default function Home() {
           </CounterCard>
         </SillyGrid>
 
+        <ChartTitle>
+          WhatsApp experimentation, tests per year
+        </ChartTitle>
+        <ChartCard>
+          <ExperimentChart />
+        </ChartCard>
+        <ChartCaption>*2026 projected.</ChartCaption>
+
         <HeadingL>Career</HeadingL>
 
         <Timeline>
@@ -313,13 +321,6 @@ export default function Home() {
                   semantic models, and an experimentation agent.
                 </ProjectItem>
               </ProjectList>
-              <ChartTitle>
-                WhatsApp experimentation, tests per year
-              </ChartTitle>
-              <ChartCard>
-                <ExperimentChart />
-              </ChartCard>
-              <ChartCaption>*2026 projected.</ChartCaption>
             </TextBody>
           </TimelineEntry>
 

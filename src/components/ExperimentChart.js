@@ -20,7 +20,7 @@ export function ExperimentChart() {
         data={data}
         keys={["tests"]}
         indexBy="year"
-        margin={{top: 20, right: 20, bottom: 50, left: 70}}
+        margin={{top: 20, right: 20, bottom: 50, left: 60}}
         padding={0.4}
         valueScale={{type: "linear"}}
         indexScale={{type: "band", round: true}}
@@ -41,14 +41,16 @@ export function ExperimentChart() {
           tickValues: [0, 10000, 20000],
           legend: "Tests per year",
           legendPosition: "middle",
-          legendOffset: -55,
-          format: value => value.toLocaleString("en-US"),
+          legendOffset: -50,
+          format: value => (value >= 1000 ? `${value / 1000}k` : `${value}`),
         }}
         gridYValues={[0, 10000, 20000]}
         enableLabel={true}
         labelSkipHeight={12}
         labelTextColor="#ffffff"
-        valueFormat={value => value.toLocaleString("en-US")}
+        valueFormat={value =>
+          value >= 1000 ? `${value / 1000}k` : `${value}`
+        }
         animate={true}
         theme={{
           fontFamily: "IBMPlexMono, monospace",
