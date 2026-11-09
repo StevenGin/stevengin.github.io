@@ -49,6 +49,7 @@ export function SEO({title}) {
       ]}
       link={[
         {rel: "icon", type: "image/svg+xml", href: `/favicon.svg`},
+        {rel: "icon", type: "image/png", href: `/favicon-512.png`},
         {rel: "apple-touch-icon", href: `/favicon-512.png`},
       ]}
     />
