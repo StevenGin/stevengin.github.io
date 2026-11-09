@@ -16,6 +16,7 @@ import {SiLinkedin} from "@react-icons/all-files/si/SiLinkedin"
 
 import {AiFillFilePdf} from "@react-icons/all-files/ai/AiFillFilePdf"
 import {ExperimentChart} from "../components/ExperimentChart"
+import {CokeCounter} from "../components/CokeCounter"
 
 const Hero = styled.div`
   margin-bottom: 20vh;
@@ -58,16 +59,17 @@ const TimelineEntry = styled.div`
     border: 3px solid var(--light-color);
     border-radius: 50%;
     content: "";
-    height: 14px;
-    left: -43px;
+    height: 20px;
+    left: -33px;
     position: absolute;
-    top: 4px;
-    width: 14px;
+    top: 6px;
+    transform: translateX(-50%);
+    width: 20px;
   }
 
   @media (max-width: ${BREAKPOINT}px) {
     &::before {
-      left: -35px;
+      left: -25px;
     }
   }
 `
@@ -126,7 +128,31 @@ const ChartTitle = styled.p`
 const ChartCaption = styled.p`
   color: var(--dark-color-lighter);
   font-size: 14px;
-  margin: 0 0 5vh 0;
+  margin: 0;
+`
+const CounterCard = styled.div`
+  align-items: center;
+  border: 1px solid lightgray;
+  border-top: 3px solid #00d4ff;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 5vh;
+  padding: 20px 16px;
+`
+const CounterValue = styled.p`
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0;
+`
+const CounterLabel = styled.p`
+  font-weight: 700;
+  margin: 0 0 4px 0;
+`
+const CounterNote = styled.p`
+  color: var(--dark-color-lighter);
+  font-size: 14px;
+  margin: 0;
 `
 const SocialIconList = styled.ul`
   align-items: center;
@@ -227,13 +253,17 @@ export default function Home() {
           </KpiCard>
         </KpiGrid>
 
-        <ChartTitle>
-          WhatsApp experimentation, tests per year
-        </ChartTitle>
-        <ChartCard>
-          <ExperimentChart />
-        </ChartCard>
-        <ChartCaption>*2026 projected.</ChartCaption>
+        <CounterCard>
+          <CounterValue>
+            <CokeCounter />
+          </CounterValue>
+          <div>
+            <CounterLabel>Coke Zeros consumed</CounterLabel>
+            <CounterNote>
+              live count — one every 3 seconds, extremely scientific
+            </CounterNote>
+          </div>
+        </CounterCard>
 
         <HeadingL>Career</HeadingL>
 
@@ -259,6 +289,13 @@ export default function Home() {
                   semantic models, and an experimentation agent.
                 </ProjectItem>
               </ProjectList>
+              <ChartTitle>
+                WhatsApp experimentation, tests per year
+              </ChartTitle>
+              <ChartCard>
+                <ExperimentChart />
+              </ChartCard>
+              <ChartCaption>*2026 projected.</ChartCaption>
             </TextBody>
           </TimelineEntry>
 
