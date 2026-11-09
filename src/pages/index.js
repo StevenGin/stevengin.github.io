@@ -391,9 +391,7 @@ export default function Home() {
             <TextBody>
               <b>Side projects</b>
               <TimelineDate>Ongoing</TimelineDate>
-              Indie games in Unity, in development — <b>Popstar</b>, a
-              pop-group management game, and <b>Aboard the Astra 2</b>, a
-              co-op roguelike.
+              Indie games in Unity, in development.
             </TextBody>
           </TimelineEntry>
         </Timeline>
