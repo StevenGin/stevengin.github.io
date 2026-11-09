@@ -17,13 +17,24 @@ const Logo = styled.p`
   }
 `
 
+const NavLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+`
+
 export function HeaderLogo() {
   return (
     <HeaderWrapper>
       <Logo>SG</Logo>
-      <Link to="/about">
-        <p>About</p>
-      </Link>
+      <NavLinks>
+        <Link to="/blog">
+          <p>Blog</p>
+        </Link>
+        <Link to="/about">
+          <p>About</p>
+        </Link>
+      </NavLinks>
     </HeaderWrapper>
   )
 }
