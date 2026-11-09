@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Typewriter from "typewriter-effect"
 import {
+  Button,
   HeaderLogo,
   HeadingXL,
   HeadingL,
@@ -16,7 +17,7 @@ import {SiLinkedin} from "@react-icons/all-files/si/SiLinkedin"
 
 import {AiFillFilePdf} from "@react-icons/all-files/ai/AiFillFilePdf"
 import {ExperimentChart} from "../components/ExperimentChart"
-import {CokeCounter} from "../components/CokeCounter"
+import {CokeCounter, GuitarStringsCounter} from "../components/CokeCounter"
 
 const Hero = styled.div`
   margin-bottom: 20vh;
@@ -136,8 +137,17 @@ const CounterCard = styled.div`
   border-top: 3px solid #00d4ff;
   display: flex;
   gap: 24px;
-  margin-bottom: 5vh;
   padding: 20px 16px;
+`
+const SillyGrid = styled.div`
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 5vh;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    grid-template-columns: 1fr;
+  }
 `
 const CounterValue = styled.p`
   font-size: 36px;
@@ -253,17 +263,31 @@ export default function Home() {
           </KpiCard>
         </KpiGrid>
 
-        <CounterCard>
-          <CounterValue>
-            <CokeCounter />
-          </CounterValue>
-          <div>
-            <CounterLabel>Coke Zeros consumed</CounterLabel>
-            <CounterNote>
-              live count — one every 3 seconds, extremely scientific
-            </CounterNote>
-          </div>
-        </CounterCard>
+        <SillyGrid>
+          <CounterCard>
+            <CounterValue>
+              <CokeCounter />
+            </CounterValue>
+            <div>
+              <CounterLabel>Coke Zeros consumed</CounterLabel>
+              <CounterNote>
+                live count — one every 3 seconds, extremely scientific
+              </CounterNote>
+            </div>
+          </CounterCard>
+          <CounterCard>
+            <CounterValue>
+              <GuitarStringsCounter />
+            </CounterValue>
+            <div>
+              <CounterLabel>Guitar strings replaced</CounterLabel>
+              <CounterNote>
+                live count — one every 30 seconds, also extremely
+                scientific
+              </CounterNote>
+            </div>
+          </CounterCard>
+        </SillyGrid>
 
         <HeadingL>Career</HeadingL>
 
@@ -397,6 +421,39 @@ export default function Home() {
             </TextBody>
           </TimelineEntry>
         </Timeline>
+
+        <HeadingL>Publications</HeadingL>
+        <TextBody>
+          <a
+            href="https://medium.com/@AnalyticsAtMeta/forecasting-meta-balancing-art-and-science-92526e1ae36c"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Forecasting@Meta: Balancing Art and Science
+          </a>
+          , with Kevin Birnbaum, Analytics at Meta, May 2024.
+        </TextBody>
+
+        <HeadingL>Education</HeadingL>
+        <Timeline>
+          <TimelineEntry>
+            <TextBody>
+              <b>M.A. Economics, University of Ottawa</b>
+              <TimelineDate>2014 – 2016</TimelineDate>
+            </TextBody>
+          </TimelineEntry>
+          <TimelineEntry>
+            <TextBody>
+              <b>
+                B.A. (Honours) Economics and Linguistics, University of
+                Manitoba
+              </b>
+              <TimelineDate>2010 – 2014</TimelineDate>
+            </TextBody>
+          </TimelineEntry>
+        </Timeline>
+
+        <Button href="mailto:verdananew&#64;gmail.com">Get in touch</Button>
       </Layout>
     </>
   )

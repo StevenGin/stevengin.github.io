@@ -1,19 +1,14 @@
 import React, {useEffect, useState} from "react"
 
-// A very serious live count of Coke Zeros consumed. The pace is a
-// guess (one every 3 seconds from a base of 1,337 on Nov 9, 2026) —
-// calibrate it with a real number and it becomes science.
-const EPOCH = new Date("2026-11-09T00:00:00-08:00").getTime()
-const BASE = 1337
-const MS_PER_COKE = 3000
+// Live joke counters. The paces are guesses — calibrate them with real
+// numbers and they become science.
+function useLiveCount(epochISO, base, msPerUnit) {
+  const epoch = new Date(epochISO).getTime()
+  const countAt = now =>
+    base + Math.max(0, Math.floor((now - epoch) / msPerUnit))
 
-function countAt(now) {
-  return BASE + Math.max(0, Math.floor((now - EPOCH) / MS_PER_COKE))
-}
-
-export function CokeCounter() {
   const [count, setCount] = useState(() =>
-    typeof window === "undefined" ? BASE : countAt(Date.now()),
+    typeof window === "undefined" ? base : countAt(Date.now()),
   )
 
   useEffect(() => {
@@ -21,5 +16,15 @@ export function CokeCounter() {
     return () => clearInterval(timer)
   }, [])
 
+  return count
+}
+
+export function CokeCounter() {
+  const count = useLiveCount("2026-11-09T00:00:00-08:00", 1337, 3000)
+  return <>{count.toLocaleString("en-US")}</>
+}
+
+export function GuitarStringsCounter() {
+  const count = useLiveCount("2026-11-09T00:00:00-08:00", 47, 30000)
   return <>{count.toLocaleString("en-US")}</>
 }
